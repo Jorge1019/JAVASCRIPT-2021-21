@@ -18,7 +18,7 @@
    <input type="button" id="2" value='<' onclick="anteriorPersona()" >
    <input type="button" id="3" value='>' onclick="siguientePersona()">
    <input type="button" id="4" value='>>|' onclick="ultimoPersona()" ><br>
-   <input type="button" onclick=crear() value="Crear" id="crea"><input type="button" onclick=aceptar() value="Aceptar" disabled="disabled" id="acept"><br>
+   <input type="button" onclick=crear() value="Crear" id="crea"><input type="button" onclick=borrar() value="Borrar" id="borra"><input type="button" onclick=modificar() value="Modificar" id="modifica"><input type="button" onclick=aceptar() value="Aceptar" disabled="disabled" id="acept"><br>
 <input type="button" onclick=edad() value="Edad" id="ed"><input type="button" onclick=listarPersonasVentana() value="Listar las Personas" id="lpv"><br>
 
 <div id="miDiv"></div>
@@ -96,10 +96,10 @@ set cp(x){
 
     listarPersona(){
 if (this._genero.toLowerCase()=="masculino"){
-        tabla+="<tr><td>Sr "+this._nombre+"</td><td>"+this._apellidos+"</td><td>"+this._direccion+"</td><td>"+this._nacimiento+"</td><td>"+this._genero+"</td><td>"+this._cp+"</td></tr>";
+        tabla+="<tr><td>Sr. "+this._nombre+"</td><td>"+this._apellidos+"</td><td>"+this._direccion+"</td><td>"+this._nacimiento+"</td><td>"+this._genero+"</td><td>"+this._cp+"</td></tr>";
 }
 if (this._genero.toLowerCase()=="femenino"){
-        tabla+="<tr><td>Sra "+this._nombre+"</td><td>"+this._apellidos+"</td><td>"+this._direccion+"</td><td>"+this._nacimiento+"</td><td>"+this._genero+"</td><td>"+this._cp+"</td></tr>";
+        tabla+="<tr><td>Sra. "+this._nombre+"</td><td>"+this._apellidos+"</td><td>"+this._direccion+"</td><td>"+this._nacimiento+"</td><td>"+this._genero+"</td><td>"+this._cp+"</td></tr>";
 }
 
     }
@@ -113,7 +113,8 @@ misPersonas[i].listarPersona();
 
 }
 tabla+="</table>";
-document.getElementById("tabla").innerHTML=tabla;
+ 
+return tabla;
 }
 
 
@@ -123,7 +124,7 @@ misPersonas.push(new Persona("Andrei Razvan", "Olteanu","Calle Koala","15/02/200
 misPersonas.push(new Persona("Ruben", "Yañez Angelan","Calle del Alamo","6/03/2004","Masculino","28810"));
 misPersonas.push(new Persona("Angel", "Gonzalez Blanco","Calle Juan Carlos I","25/10/2022","Femenino","28810"));
 
-//var pattern="/^([0-3]{1}[0-9]{1})/([0-9]{2})/([0-9]{4})$/";
+//var pattern="/^(0[0-3]{1}[0-9]{1})/([0-9]{2})/([0-9]{4})$/";
 var cadena="qwertyuiopasdfghjklñzxcvbnmçáéíóú ";
 var numeros="1234567890"
 var miVentana;
@@ -132,8 +133,8 @@ var miVentana;
 function listarPersonasVentana(){
    miVentana=window.open("","","width=800,height=400,top=0,left=0");
 miVentana.document.open();
-miVentana.document.write(<div id="tabla"></div>);
-miVentana.document.write("<script>"+Persona.listarPersonas()+"\<\/script>");
+
+miVentana.document.write(Persona.listarPersonas());
 
 
     
@@ -142,6 +143,13 @@ miVentana.document.write("<script>"+Persona.listarPersonas()+"\<\/script>");
 miVentana.document.close();
 }
 var z=0;
+
+document.getElementById("nombre").value=misPersonas[0].nombre;
+document.getElementById("apellidos").value=misPersonas[0].apellidos;
+document.getElementById("direccion").value=misPersonas[0].direccion;
+document.getElementById("nacimiento").value=misPersonas[0].nacimiento;
+document.getElementById("genero").value=misPersonas[0].genero;
+document.getElementById("codigopostal").value=misPersonas[0].cp;
 function crear(){
     document.getElementById("nombre").value="";
 document.getElementById("apellidos").value="";
@@ -155,8 +163,40 @@ document.getElementById("3").disabled=true;
 document.getElementById("4").disabled=true;
 document.getElementById("acept").disabled=false;
 document.getElementById("crea").disabled=true;
+document.getElementById("borra").disabled=true;
+document.getElementById("modifica").disabled=true;
 document.getElementById("ed").disabled=true;
 document.getElementById("lpv").disabled=true;
+
+
+
+
+}
+function borrar(){
+   
+    var hola=confirm("Estas seguro de que deseas borrar esta persona");
+    if (hola==true){
+        misPersonas.splice(z,1);
+document.getElementById("nombre").value="";
+document.getElementById("apellidos").value="";
+document.getElementById("direccion").value="";
+document.getElementById("nacimiento").value="";
+document.getElementById("genero").value="";
+document.getElementById("codigopostal").value="";
+    }
+
+
+
+}
+function modificar(){
+
+
+misPersonas[z].nombre=document.getElementById("nombre").value;
+misPersonas[z].apellidos=document.getElementById("apellidos").value;
+misPersonas[z].direccion=document.getElementById("direccion").value;
+misPersonas[z].nacimiento=document.getElementById("nacimiento").value;
+misPersonas[z].genero=document.getElementById("genero").value;
+misPersonas[z].cp=document.getElementById("codigopostal").value;
 
 
 
@@ -257,6 +297,8 @@ document.getElementById("3").disabled=false;
 document.getElementById("4").disabled=false;
 document.getElementById("acept").disabled=true;
 document.getElementById("crea").disabled=false;
+document.getElementById("borra").disabled=false;
+document.getElementById("modifica").disabled=false;
 document.getElementById("ed").disabled=false;
 document.getElementById("lpv").disabled=false;
 
