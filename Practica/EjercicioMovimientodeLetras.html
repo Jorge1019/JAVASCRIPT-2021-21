@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovimientoDeLetras</title>
+</head>
+<body>
+Texto <input type="text" id = "texto"><br>
+<input type="button" onclick="girarIzquierda()" value="Gira Izquierda">
+<input type="button" onclick="girarDerecha()" value="Gira Derecha">
+    <br><div id="miDiv"></div>
+<script>
+
+
+function girarIzquierda(){
+    if (document.getElementById("miDiv").innerHTML==""){
+        var texto = document.getElementById("texto").value;
+
+    }else{
+        var texto = document.getElementById("miDiv").innerHTML;
+    }
+var nuevoT=texto.charAt(texto.length-1)+texto.substr(0,texto.length-1);
+
+document.getElementById("miDiv").innerHTML=nuevoT;
+
+}
+function girarDerecha(){
+    if (document.getElementById("miDiv").innerHTML==""){
+        var texto = document.getElementById("texto").value;
+
+    }else{
+        var texto = document.getElementById("miDiv").innerHTML;
+    }
+var nuevoT=texto.substr(1)+texto.charAt(0);
+
+document.getElementById("miDiv").innerHTML=nuevoT;
+
+}
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
