@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>MostrarNumerosPiramide</title>
+</head>
+
+<body onload="piramide()">
+    <script>
+        function piramide() {
+            var a = 10;
+            texto = "";
+            for (var i = 1; i <= a; i++) {
+
+                for (var j = 1; j <= i; j++) {
+                    texto += i;
+
+                }
+                texto += "<br>";
+
+
+            } document.getElementById("miDiv").innerHTML = texto;
+        }
+
+
+
+    </script>
+
+    
+    <div id="miDiv"></div>
+
+
+</body>
+
+</html>

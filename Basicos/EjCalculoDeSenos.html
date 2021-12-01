@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de grados</title>
+</head>
+
+<body>
+    <div id="miDiv"></div>
+    
+    <script>
+    
+        var texto = "<table border='1'><tr><th>GRADOS</th><th>RADIANES</th><th>SENO</th><th>COSENO</th></tr>";
+
+        for (var grado = 0; grado <= 360; grado += 10) {
+            var radianes = Math.PI * grado / 180;
+            texto += ("<tr><td>" + grado + "</td><td>" + radianes.toFixed(3) + "</td><td>" + (Math.sin(radianes)).toFixed(3) + "</td><td>" + (Math.cos(radianes)).toFixed(3) + "</td></tr>");
+
+
+
+        }
+        document.getElementById("miDiv").innerHTML = texto + "</table>";
+
+
+    </script>
+
+
+
+</body>
+
+</html>

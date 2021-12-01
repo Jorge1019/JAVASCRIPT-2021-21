@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Arrays</title>
+</head>
+<body>
+    ELEMENTOS<input type="text" id="elemen"><br/>
+    MENOR<input type="text" id="min"><br/>
+MAYOR<input type="text" id="max"><br/>
+
+<input type="button" value="GENERAR" onclick="random();">
+<div id="miDiv"></div>
+
+    <script>
+        function random(){
+            var element=parseInt(document.getElementById("elemen").value);
+var min=parseInt(document.getElementById("min").value);
+var max=parseInt(document.getElementById("max").value);
+var array=[];
+var rnd=Math.floor((Math.random()*(max-min+1))+min);
+var texto="Array generado=<br/> ";
+var cont=0;
+array.length=element;
+for (i=0;i<=element-1;i++){
+ 
+    
+
+ 
+    for(y=0;y<=array.length;y++){
+        console.log(y);
+        if(array[y]==rnd){
+            cont++;
+        }if (cont!=0){
+            rnd=Math.floor((Math.random()*(max-min+1))+min);
+            y=-1;
+            cont=0;
+        }
+        if((cont<=0)&&(y==array.length)){
+array[i]=rnd;
+        }
+       
+    }
+
+    rnd=Math.floor((Math.random()*(max-min+1))+min);
+}
+
+
+
+for (i=0;i<=array.length-1;i++){
+
+texto+=array[i]+",";
+
+}
+function comparar ( a, b ){ return a - b; }
+array=array.sort(comparar);
+
+texto+="<br/> Array ordenado<br/>"+array;
+
+
+
+document.getElementById("miDiv").innerHTML=texto;
+
+
+        }
+
+
+
+
+    </script>
+</body>
+</html>

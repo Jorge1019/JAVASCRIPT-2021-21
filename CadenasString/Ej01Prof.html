@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej01ProfeStrings</title>
+    <script>
+        function izquierda() {
+            var letra = document.getElementById("texto").value;
+
+            var texto = document.getElementById("miDiv").innerHTML;
+
+            if (texto === "") {
+                texto = "";
+                for (var i = 1; i <= letra.length; i++) {
+
+
+                    texto += letra.charAt(i);
+
+                    if (i == letra.length) {
+                        texto += letra.charAt(0);
+                    }} } 
+            else {
+                letra = texto;
+                texto = "";
+                for (var i = 1; i <= letra.length; i++) {
+                    texto += letra.charAt(i); 
+                    if (i == letra.length) {
+                        texto += letra.charAt(0); } } }
+document.getElementById("miDiv").innerHTML = texto; document.getElementById("intervalo").disabled = true;
+        }
+        function derecha() {
+            var letra = document.getElementById("texto").value;
+
+            var texto = document.getElementById("miDiv").innerHTML;
+
+            if (texto === "") {
+                texto = "";
+                for (var i = letra.length; i <= 0; i--) {
+
+                    if (i === letra.length) {
+                        texto += letra.charAt(letra.length);
+                    }
+
+
+
+                }
+            } else {
+                letra = texto;
+                texto = "";
+                var n = 0;
+                for (var i = letra.length - 1; i >= 0; i--) {
+
+                    if (i == letra.length - 1) {
+                        texto += letra.charAt(letra.length - 1);
+
+                    }
+                    else {
+                        texto += letra.charAt(n);
+                        n++;
+                    }
+
+
+                }
+
+
+
+
+            }
+
+            document.getElementById("miDiv").innerHTML = texto; document.getElementById("intervalo").disabled = true;
+        }
+        function pararInterval() {
+
+            clearInterval(parar);
+            document.getElementById("intervalo").disabled = false;
+        }
+    </script>
+</head>
+
+<body>
+    Texto: <input type="text" id="texto">
+    <input type="button" id="intervalo" value="Mover izquierda" onclick="parar=setInterval('izquierda();',1000)" />
+    <input type="button" id="intervalo" value="Mover derecha" onclick="parar=setInterval('derecha();',1000)" />
+    <input type="button" value="PararInterval" onclick="pararInterval()" />
+    <div id="miDiv"></div>
+</body>
+
+</html>

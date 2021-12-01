@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Clases</title>
+</head>
+<body>
+    Dime que clase quieres crear <input type="text" id="texto"><br>
+    <input type="button" onclick="meterCoche()" value="Introducir">
+<br><div id="miDiv"></div>
+
+
+
+<script>
+
+var clase=[];
+
+class coche{
+
+constructor (marca){
+this._nombrecoche=marca;
+}
+
+}
+
+function meterCoche(){
+var n=document.getElementById("texto").value;
+clase.push(new coche(n));
+document.getElementById("miDiv").innerHTML="";
+clase.forEach(element=>document.getElementById("miDiv").innerHTML +=element._nombrecoche+"<br>");
+
+}
+
+</script>
+</body>
+</html>

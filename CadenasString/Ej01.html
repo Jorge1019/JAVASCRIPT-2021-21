@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+
+</head>
+<body>
+Texto: <input type="text" id="texto">
+<input type="button" onclick="izquierda();" value="Mover izquierda">
+<input type="button" onclick="derecha();" value="Mover derecha">
+<div id="miDiv"></div>
+
+
+
+<script>
+    function izquierda(){
+    var letra=document.getElementById("texto").value;
+    
+    var texto=document.getElementById("miDiv").innerHTML;
+   
+    if(texto===""){
+        texto="";
+for (var i=1;i<=letra.length;i++){
+
+    
+texto+=letra.charAt(i);
+
+if (i==letra.length){
+    texto+=letra.charAt(0); 
+}
+
+
+}
+}else{
+    letra=texto;
+    texto="";
+    for (var i=1;i<=letra.length;i++){
+
+    
+texto+=letra.charAt(i);
+
+if (i==letra.length){
+    texto+=letra.charAt(0); 
+}
+
+
+}
+
+
+
+
+}
+
+document.getElementById("miDiv").innerHTML=texto;
+    }
+    function derecha(){
+    var letra=document.getElementById("texto").value;
+    
+    var texto=document.getElementById("miDiv").innerHTML;
+   
+    if(texto===""){
+        texto="";
+for (var i=letra.length;i<=0;i--){
+
+    if (i===letra.length){
+texto+=letra.charAt(letra.length); 
+}
+
+
+
+}
+}else{
+    letra=texto;
+    texto="";
+    var n=0;
+    for (var i=letra.length-1;i>=0;i--){
+
+if (i==letra.length-1){
+texto+=letra.charAt(letra.length-1); 
+
+}
+else{
+    texto+=letra.charAt(n); 
+    n++;
+}
+
+
+}
+
+
+
+
+}
+
+document.getElementById("miDiv").innerHTML=texto;
+    }
+</script>
+
+</body>
+</html>

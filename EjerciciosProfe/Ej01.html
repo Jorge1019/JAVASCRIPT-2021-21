@@ -1,0 +1,107 @@
+<!--
+    Crear el siguiente documento en el cual se deben introducir datos en dos cajas de texto con las siguientes características
+        Campo Nombre:
+            -Solamente se admiten caracteres alfabéticos incluidas las vocales acentuadas y la ç, tanto mayus como minus
+            -El número máximo de caracteres será de 25 y el mínimo de 3
+        Campo Edad:
+            -Solamente se admiten caracteres numéricos
+            -Edad mínima 5, máxima 110
+        En los dos casos:
+            -Si se introduce algún carácter no permitido se debe mostrar ROJO Hay un error en el carácter número [número del carácter, no
+            el índice de la cadena] del texto En color rojo.
+            -Si el texto introducido es correcto se mostrará AZUL Todos los caracteres son correctos con el color de texto azul
+            -Si se produce cualquier otro error se debe indicar para guiar al usuario y que lo pueda solventar, con el color rojo
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej01</title>
+    <script>
+
+        function validar(){
+var nombre=(document.getElementById("nombre").value).toLowerCase();
+var edad=document.getElementById("edad").value;
+var divnombre="Hay un error en el carácter número ";
+var divedad="Hay un error en el carácter número ";
+var incluidosnombres="qwertyuiopasdfghjklzxcvbn máéíóúñç";
+var valoresAceptados = "0123456789";
+var d=0;
+var c=0;
+document.getElementById("ed").style.color="red";
+document.getElementById("nm").style.color="red";
+
+    for (var i=0;i<edad.length;i++){
+
+       if( valoresAceptados.includes(edad.charAt(i))){
+d++;
+       }
+       else{
+        divedad+=i+1+","; 
+       }
+    }
+    
+
+if(d==edad.length ){
+    divedad="Todos los caracteres son correctos";document.getElementById("ed").style.color="blue";
+
+    if(parseInt(edad)>110 ){
+    divedad="No puedes tener más de 110 años";document.getElementById("ed").style.color="red";
+}
+
+if(parseInt(edad)<5){
+    divedad="No puedes tener menos de 5 años";document.getElementById("ed").style.color="red";
+}
+}
+ 
+if(edad==""){
+    divedad="Cadena vacia";document.getElementById("ed").style.color="red";
+}
+
+
+
+for (var i=0;i<nombre.length;i++){
+
+if( incluidosnombres.includes(nombre.charAt(i))){
+c++;
+}
+else{
+ divnombre+=i+1+","; 
+}
+}
+if(c==nombre.length){
+    divnombre="Todos los caracteres son correctos";document.getElementById("nm").style.color="blue";
+}
+if (nombre.length>25 ){
+    divnombre="No se permiten más de 25 caracteres";document.getElementById("nm").style.color="red";
+}
+else if (nombre.length<3){
+    divnombre="No se permiten menos de 3 caracteres";document.getElementById("nm").style.color="red";
+}
+
+
+
+
+document.getElementById("nm").innerHTML=divnombre;
+ document.getElementById("ed").innerHTML=divedad;
+        }
+        function limpiar(){
+            document.getElementById("nombre").value="";  
+            document.getElementById("edad").value="";  
+            document.getElementById("nm").innerHTML="";  
+            document.getElementById("ed").innerHTML="";  
+        }
+
+
+    </script>
+</head>
+<body>
+   Nombre:  <input type="text" id="nombre"><div id="nm"></div>
+    Edad: <input type="text" id="edad"><div id="ed"></div>
+<input type="button" onclick="validar();"value="Validar"><input type="button" onclick="limpiar();" value="Limpiar">
+
+</body>
+</html>

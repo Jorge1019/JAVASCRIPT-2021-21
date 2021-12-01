@@ -1,0 +1,44 @@
+<!--Introducir un nombre por pantalla y pasar ese nombre abriendo otra ventana -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EjJoseLui</title>
+</head>
+<body>
+   Introduce tu nombre: <input type="text" id="nombre"><input type="button" value="?" onclick="abrir()">
+    
+
+
+
+   <script>
+      var miVentana=new Window();
+function abrir(){
+var nombre=document.getElementById("nombre").value;
+
+miVentana=window.open("","","width=200,height=200,top=0,left=0");
+miVentana.document.open();
+miVentana.document.write("Nombre<input type='text' value='"+nombre+"' disabled>");
+
+
+
+
+
+}
+
+
+   </script>
+
+
+
+
+</body>
+</html>

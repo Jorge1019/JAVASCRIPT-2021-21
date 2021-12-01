@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Objeto Document</title>
+
+	
+</head>
+<body>
+<form name="form5" method="POST">
+Máximo 50 caracteres: <input type="text" name="campo" size="50" onKeypress="return contar(this.form)"><br>
+Escritos: <input type="text" ReadOnly name="escritos" size="2" value="0"> 
+Restantes: <input type="text" ReadOnly name="restantes" size="2" value="50">
+</form>
+<a href="http:\\www.nasa.es" target="_blank">Nasa</a>
+<form name="ejemplo6" method="GET" action="ejemplos/ej6.asp" target="_blank">
+Por favor, complete su domicilio:<br>
+<br>
+Calle: <input type="text" name="calle" size="40"> 
+Nro.: <input type="text" name="nro" size="3"><br>
+Piso: <input type="text" name="piso" size="2"> 
+Departamento: <input type="text" name="dto" size="2"><br>
+Código Postal: <input type="text" name="cp" size="8"> 
+Ciudad: <input type="text" name="ciudad" size="20"> 
+País: <input type="text" name="pais" size="20"><br><br>
+Verifique su domicilio: <textArea name="domicilio" size="80" ReadOnly  cols=50 rows=9></textarea>
+<br>
+Si los datos no son correctos, <a onClick="ejemplo6.domicilio.value=''" style="cursor: help">
+presione aquí</a> y realice los cambios en los campos correspondientes.<br>
+<input type="button" value="Confirmar" onclick="completar(this.form)">
+</form>
+<a href="http:\\www.google.es" target="_self"> Google</a>
+</br>
+<img src="imagenes/uno.jpg" width=100 height=90></img>
+<img src="imagenes/dos.jpg" width=90 height=100></img>
+<img src="imagenes/tres.jpg" width=100 height=95></img>
+<img src="imagenes/cuatro.jpg" width=95 height=100></img>
+<br>
+<div id="miDiv"></div>
+
+
+<script>
+	document.open();
+	document.write("El número de imágenes es: "+document.images.length+"</br>");
+	document.write("El camino de la primera imagen es:  "+document.images[0].src+"</br>");
+	document.write("El camino de la segunda imagen es:  "+document.images[1].src+"</br>");
+	document.write("El camino de la tercera imagen es:  "+document.images[2].src+"</br>");
+	document.write("El camino de la cuarta imagen es:  "+document.images[3].src+"</br>");
+	document.write("El tamaño de la primera imagen es:  "+document.images[0].width+"x"+document.images[0].height+"</br>");
+	document.write("El tamaño de la segunda imagen es:  "+document.images[1].width+"x"+document.images[1].height+"</br>");
+	document.write("El tamaño de la tercera imagen es:  "+document.images[2].width+"x"+document.images[2].height+"</br>");
+	document.write("El tamaño de la cuarta imagen es:  "+document.images[3].width+"x"+document.images[3].height+"</br>");
+
+	document.write("El número de enlaces es:  "+document.links.length+"</br>");
+	document.write("La direccion del primer enlace es:  "+document.links[0].href+"</br>");
+	document.write("La direccion del seunfo enlace es:  "+document.links[1].href+"</br>");
+	document.write("El modo de apertura del primer enlace es:  "+document.links[0].target+"</br>");
+	document.write("El modo de apertura del segundo enlace es:  "+document.links[1].target+"</br>");
+
+	document.write("El número de formularios es:  "+document.forms.length+"</br>");
+	document.write("El nombre de envio del primer formulario es:  "+document.forms[0].name+"</br>");
+	document.write("El nombre de envio del segundo formulario es:  "+document.forms[1].name+"</br>");
+	document.write("El método de envio del primer formulario es:  "+document.forms[0].method+"</br>");
+	document.write("El método de envio del segundo formulario es:  "+document.forms[1].method+"</br>");
+	document.write("El fichero de envio del primer formulario es:  "+document.forms[0].action+"</br>");
+	document.write("El fichero de envio del segundo formulario es:  "+document.forms[1].action+"</br>");
+		</script>
+</body>
+</html>		

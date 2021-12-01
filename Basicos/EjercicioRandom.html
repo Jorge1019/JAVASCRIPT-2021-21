@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random</title>
+</head>
+<body>
+    <script>
+        function random(){
+var max=parseInt(document.getElementById("max").value);
+var min=parseInt(document.getElementById("min").value);
+var a=0;
+var texto="";
+for (var i=1;i<=5;i++){
+     a=Math.floor((Math.random()*(max-min+1))+min);
+     texto+="Numero random "+a+"<br/> ";
+}
+document.getElementById("miDiv").innerHTML=texto;
+}
+
+
+    </script>
+MENOR<input type="text" id="min"><br/>
+MAYOR<input type="text" id="max"><br/>
+
+<input type="button" value="GENERAR" onclick="random();">
+<div id="miDiv"></div>
+</body>
+</html>

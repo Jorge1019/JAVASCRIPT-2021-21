@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array numeros</title>
+</head>
+<body>
+    <input type="text" id="texto" ><br>
+    <input type="button" id="1" value='|<<' onclick="primerNumero()">
+    <input type="button" id="2" value='<' onclick="anteriorNumero()" >
+    <input type="button" id="3" value='>' onclick="siguienteNumero()">
+    <input type="button" id="4" value='>>|' onclick="ultimoNumero()" ><br>
+    <input type="button" id="5" value='Alta' onclick="alta()" >
+    <input type="button" id="7" value='Baja' onclick="baja()" >
+    <input type="button" id="8" value='Modificar' onclick="modificar()" >
+    <input type="button" id="9" value='Listado' onclick="listado()" >
+    <br><input type="button" id="6" value='Aceptar'onclick="aceptar()" >
+    
+<script>
+   
+    document.getElementById("6").disabled=true;
+var array=[0,1,2,3,4,5,6,7,8,9];
+var a=array.indexOf(6);
+var z=0;
+var m=0;
+
+document.getElementById("texto").value=a;
+var miVentana=new Window();
+function primerNumero(){
+a=array.indexOf(array[0]);
+document.getElementById("texto").value=a;
+}
+function ultimoNumero(){
+a=array[array.length-1];
+document.getElementById("texto").value=a;
+}
+function siguienteNumero(){
+    if (a!=array[array.indexOf(array[array.length-1])]){
+a=array[array.indexOf(a)+1];
+}else{
+    a=array.indexOf(0);
+}
+document.getElementById("texto").value=a;
+}
+function anteriorNumero(){
+    if (a!==0){
+        a=array[array.indexOf(a)-1];
+}else{
+    a=array[array.length-1];
+}
+document.getElementById("texto").value=a;
+}
+function alta(){
+    document.getElementById("1").disabled=true;
+    document.getElementById("2").disabled=true;
+    document.getElementById("3").disabled=true;
+    document.getElementById("4").disabled=true;
+    document.getElementById("5").disabled=true;
+    document.getElementById("6").disabled=false;
+    document.getElementById("9").disabled=true;
+    document.getElementById("7").disabled=true;
+   document.getElementById("texto").value="";
+
+z=1;
+document.getElementById("8").disabled=true;
+
+}
+function baja(){
+    document.getElementById("1").disabled=true;
+    document.getElementById("2").disabled=true;
+    document.getElementById("3").disabled=true;
+    document.getElementById("4").disabled=true;
+    document.getElementById("5").disabled=true;
+    document.getElementById("9").disabled=true;
+    document.getElementById("7").disabled=true;
+    document.getElementById("6").disabled=false;
+   document.getElementById("texto").value="";
+z=2;
+
+document.getElementById("8").disabled=true;
+
+}
+function modificar(){
+
+    document.getElementById("5").disabled=true;
+    document.getElementById("7").disabled=true;
+    document.getElementById("8").disabled=true;
+    document.getElementById("9").disabled=true;
+    document.getElementById("6").disabled=false;
+    
+    
+z=3;
+
+
+}
+function aceptar(){
+    
+    document.getElementById("1").disabled=false;
+    document.getElementById("2").disabled=false;
+    document.getElementById("3").disabled=false;
+    document.getElementById("4").disabled=false;
+    document.getElementById("5").disabled=false;
+    document.getElementById("7").disabled=false;
+    document.getElementById("8").disabled=false;
+    document.getElementById("9").disabled=false;
+var numero=parseInt(document.getElementById("texto").value);
+if(z==1){
+if (!isNaN(numero)){
+
+if (!array.includes(numero)){
+   
+array.push(numero);
+document.getElementById("1").disabled=false;
+   
+}
+
+}
+}
+
+
+if(z==2){
+    if (!isNaN(numero)){
+
+if (array.includes(numero)){
+   array.splice(array.indexOf(numero),1);
+
+document.getElementById("1").disabled=false;
+   
+}
+
+}
+
+
+}
+if(z==3){
+    var s=prompt();   
+
+    if (!isNaN(numero) && !isNaN(s)){
+
+if (array.includes(numero)){
+   
+
+array[array.indexOf(numero)]=parseInt(s);
+
+}
+
+}
+
+
+}
+
+
+/*alert(array);*/
+
+
+
+
+document.getElementById("6").disabled=true;
+
+a=0;
+document.getElementById("texto").value=a;
+}
+
+
+function listado(){
+    
+
+
+miVentana=window.open("","","width=800,height=800,top=0,left=0");
+miVentana.document.open();
+var ascendente=array.slice();
+ascendente= ascendente.sort(function(a, b){return a - b});        //array.sort(function(a, b){return a - b});
+
+var descendente=array.slice();
+descendente= descendente.sort(function(a, b){return b - a});  
+miVentana.document.write("ARRAY <input type='text' value='"+array+"' disabled=disabled><br>Orden ascendente<input type='text' value='"+ascendente+"' disabled=disabled><br>Orden descendente<input type='text' value='"+descendente+"' disabled=disabled><br><table border='1'><tr><th>ARRAY</th><th>ORDENAR ASCENDENTE</th><th>ORDENAR DESCENDENTE</th></tr>");
+  
+  
+
+for (var i=array.length-1;i>=0;i--){
+
+miVentana.document.write("<tr><td>"+array[i]+"</td><td>"+ascendente[array.length-1-i]+"</td><td>"+descendente[array.length-1-i]+"</td>");
+
+
+}
+miVentana.document.write("</table><br><input type='button' onclick='window.close()' value='Cerrar'>");
+
+
+    miVentana.document.close();
+}
+</script>
+
+
+
+</body>
+</html>

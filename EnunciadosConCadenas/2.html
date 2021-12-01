@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej2</title>
+    <script>
+        function convertir(){
+            var nombre=document.getElementById("nombre").value;
+var apellido=document.getElementById("apellido").value;
+var apellido1=document.getElementById("apellido1").value;
+
+nombre=nombre.charAt(0).toUpperCase()+nombre.substring(1).toLowerCase();
+apellido=apellido.charAt(0).toUpperCase()+apellido.substring(1).toLowerCase();
+apellido1=apellido1.charAt(0).toUpperCase()+apellido1.substring(1).toLowerCase();
+document.getElementById("miDiv").innerHTML=nombre+" "+apellido+" "+apellido1+"</br>"+nombre+""+apellido+""+apellido1;
+        }
+    </script>
+</head>
+<body>
+    Nombre<input type="text" id="nombre"></br>
+    Apellido1<input type="text" id="apellido"></br>
+    Apellido2<input type="text" id="apellido1"></br>
+<input type="button" onclick="convertir();" value="ACEPTAR">
+<div id="miDiv"></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Factoriales</title>
+</head>
+
+<body>
+    <script>
+        function factoriales() {
+            var a = document.getElementById("numero").value;
+            var texto = "";
+            var a1 = a;
+
+            for (var i = a - 1; i >= 2; i--) {
+
+
+                a *= i; 
+
+
+
+            }
+            document.getElementById("miDiv").innerHTML = "El Factorial de " + a1 + "! es " + a;
+
+            
+
+
+        }
+    </script>
+
+
+
+</body>
+
+Introduzca un numero<input type="text" id="numero" /><br><br>
+<input type="button" value="Calcular" id="boton" onclick="factoriales();" />
+<div id="miDiv"></div>
+
+
+</html>

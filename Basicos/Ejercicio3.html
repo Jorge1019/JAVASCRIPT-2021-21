@@ -1,0 +1,62 @@
+<!-- Pedirle un numero al usuario y saber si es divisible por algun numero 
+primo menor de 10 (2,3,5,7), con boton de mostrar-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Tiene Primo?</title>
+
+</head>
+
+<body>
+    <script>
+      function tienePrimo(){
+        var a = parseInt(document.getElementById("txtNumero").value);
+        var texto = "El numero "+ a + " es divisible por los numeros primos menores que 10 =>";
+     
+        if ((a %2 )==0){
+       
+           texto= texto + " 2,";
+           b=1;
+       }
+       if ((a %3 )==0){
+       
+        
+       texto= texto+" 3,";
+
+
+   }
+   if ((a %5 )==0){
+       
+        
+       texto= texto+" 5,";
+
+
+   }if ((a %7 )==0){
+       
+        
+       texto= texto+" 7";
+
+
+   }
+   if ((a %2==0 )||(a %3==0 )||(a %5==0 )||(a %7==0 )){
+   document.getElementById("miDiv").innerHTML=texto;
+   }
+   else{
+    document.getElementById("miDiv").innerHTML="No existe ningun divisor primo que sea menor de diez para tu numero "+a;
+
+
+   }
+
+      }
+     
+    </script>
+ Introduzca el valor de un numero <input type="text" id="txtNumero" /><br><br>
+ <br>
+ 
+ <input type="button" value="Aceptar" onclick="tienePrimo();" />
+<div id="miDiv"> </div>
+</body>
+
+</html>

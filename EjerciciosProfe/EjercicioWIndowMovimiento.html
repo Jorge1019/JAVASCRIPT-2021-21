@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Window en movimiento</title>
+</head>
+<body>
+<input type="button" value="Mover" onclick="mover()">
+<input type="button" value="Redimensionar" onclick="redimensionar()">
+<input type="button" value="Mover y Redimensionar" onclick="moverYredimensionar()"><br><br>
+<input type="button" value="Mover hasta" onclick="hasta()"><br><br>
+Valor X:<input type="text" id="x"><br>
+Valor Y:<input type="text" id="y"><br>
+
+
+<script>
+var miVentana=new Window();
+
+function mover(){
+ 
+miVentana=window.open("","","width=200,height=200,top=0,left=0");
+miVentana.document.open();
+for (var i=0;i<=window.outerHeight/2;i++){
+miVentana.moveTo(i,i);
+}
+
+setTimeout("miVentana.close()",5000);
+
+
+}
+
+
+function redimensionar(){
+   var tamaño=0;
+miVentana=window.open("","","width=0,height=0,top="+tamaño+",left="+tamaño);
+
+
+for (var i=0;i<=500;i++){
+
+
+   miVentana.resizeTo(i,i);
+
+
+}
+
+setTimeout("miVentana.close()",5000);
+
+
+}
+function moverYredimensionar(){
+   var tamaño=0;
+miVentana=window.open("","","width=0,height=0,top="+tamaño+",left="+tamaño);
+
+
+for (var i=0;i<=500;i++){
+
+
+   miVentana.resizeTo(i,i);
+   miVentana.moveTo(i,i);
+
+}
+
+setTimeout("miVentana.close()",5000);
+
+
+}
+function hasta(){
+   var tamaño1=parseInt(document.getElementById("x").value);
+   var tamaño2=parseInt(document.getElementById("y").value);
+miVentana=window.open("","","width=200,height=200,top="+tamaño1+",left="+tamaño2);
+miVentana.document.open();
+
+
+setTimeout("miVentana.close()",5000);
+
+
+}
+
+
+
+</script>
+
+
+</body>
+</html>

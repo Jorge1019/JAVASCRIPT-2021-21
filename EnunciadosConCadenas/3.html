@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+    <script>
+        function ciudad(){
+var texto=document.getElementById("texto").value;
+var ciudad=["madrid","barcelona","sevilla","bilbao"];
+var respuesta="Tu ciudad "+texto.charAt(0).toUpperCase()+texto.substring(1).toLowerCase();
+var cuenta=0;
+for (var i=0;i<=ciudad.length;i++){
+    if (texto.toLowerCase()==ciudad[i]){
+respuesta+=" es correcta"
+}
+else{
+cuenta++;
+}
+
+
+}
+if (cuenta>=5){
+    document.getElementById("miDiv").innerHTML=respuesta+ " no es correcta";
+}else{
+document.getElementById("miDiv").innerHTML=respuesta;
+         } }
+    </script>
+</head>
+<body>
+   Dime el nombre de la ciudad <input type="text" id="texto"></br>
+    <input type="button" onclick="ciudad();" value="Existe?">
+
+<div id="miDiv"></div>
+
+</body>
+</html>

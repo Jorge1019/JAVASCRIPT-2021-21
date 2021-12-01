@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EjercicioGirarLetras</title>
+
+    <script>
+      var texto="";
+   
+
+
+function girarIzquierda(){
+if (texto===""){
+    texto=document.getElementById("texto").value;
+    texto=texto.substring(1,texto.length) + texto.charAt(0);
+}else{ 
+    texto=document.getElementById("miDiv").innerHTML;
+    texto=texto.substring(1,texto.length) + texto.charAt(0);
+}
+    document.getElementById("miDiv").innerHTML=texto;
+}
+
+
+
+
+    </script>
+</head>
+<body>
+    <input type="text" id="texto">
+
+    <input type="button" id="intervalo" value="Mover izquierda" onclick="parar=setInterval('girarIzquierda();',1000)" />
+
+    <div id="miDiv"></div>
+
+
+
+</body>
+</html>

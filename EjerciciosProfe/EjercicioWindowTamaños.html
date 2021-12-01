@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WindowTamaños</title>
+</head>
+<body>
+   Tamaño del top y left <input type="text" id="valor">
+    <input type="button" onclick="abrirVentana()" value="Abrir Ventana">
+    <input type="button" onclick="cerrarVentana()" value="Cerrar Ventana">
+    <script>
+        var ventana=new Window();
+       
+
+function abrirVentana(){
+
+    
+var tamaño=(document.getElementById("valor").value);
+
+
+
+ventana=window.open("","","width=200,height=200,top="+tamaño+",left="+tamaño);
+ventana.document.open();
+ventana.document.write("Ventana<br><input type='button' value='Cerrar Ventana' onclick='window.close()'><script>\<\/script>")
+window.setTimeout("cerrarVentana()",10000);
+
+
+}
+function cerrarVentana(){
+ventana.close();
+
+
+
+    
+}
+
+    </script>
+</body>
+</html>

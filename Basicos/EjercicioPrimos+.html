@@ -1,0 +1,48 @@
+<!--El usuario introduce un numero, saber si es primo o no-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Primo</title>
+</head>
+
+<body>
+    <script>
+        function espar() {
+            var a = parseInt(document.getElementById("numero").value);
+            var texto = "";
+            var j = 0;
+            for (var i = 0; i <= a; i++) {
+
+                if (a % i == 0) {
+                    j++;
+
+                }
+
+
+            }
+            if (j > 2) {
+                texto += "El numero " + a + " NO ES PRIMO";
+            }
+            else {
+
+                texto += "El numero " + a + " ES PRIMO";
+            }
+
+            document.getElementById("miDiv").innerHTML = texto;
+        }
+
+
+    </script>
+</body>
+
+Introduzca un numero<input type="text" id="numero" /><br><br>
+
+
+<input type="button" value="EVALUAR" id="boton" onclick="espar();" />
+<div id="miDiv"></div>
+
+</html>

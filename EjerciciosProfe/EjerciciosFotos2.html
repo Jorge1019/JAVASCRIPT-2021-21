@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagenes</title>
+</head>
+<body>
+  
+    <div id="fotos" style="margin-left: 30%;"><img src="" id="img" alt="fotico" height="200px" width="263px"></div>
+<input type="button"  value="Iniciar" id="ini" onclick="parar=setInterval('iniciar()',100)">
+<input type="button"  value="Parar" onclick="pararInterval()">
+
+
+<script>
+    
+var array=["uno.jpg","dos.jpg","tres.jpg","cuatro.jpg"];
+document.getElementById("img").src=array[0];
+var elegir=0;
+var i=0;
+
+function iniciar(){
+    if(elegir!=array.length-1){
+    elegir=elegir+1;
+    document.getElementById("img").src=array[elegir];
+    }
+    else{
+        document.getElementById("img").src=array[0];
+        elegir=0;
+    }
+document.getElementById("ini").disabled=true;
+}
+function pararInterval(){
+clearInterval(parar);
+document.getElementById("ini").disabled=false;
+
+}
+
+</script>
+
+
+
+</body>
+</html>

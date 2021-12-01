@@ -1,0 +1,31 @@
+<!--Numeros del 1 al 100 separados por coma, si hay un numero terminado en 7, hace PUM. no escribe el numero
+y escribe PUM y salta de linea, si encuentra un numero múltiplo de 7 escribe PUM y salta de linea-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Juego del PUM</title>
+</head>
+<body onload="PUM()">
+    <script>
+     
+       
+for (var i=1;i<=100;i++){
+
+if (i%10==7){
+    document.write("PUM<br>");break; 
+}
+else{
+switch(i%7){
+
+case 0: document.write("PUM<br>");break;
+    default: document.write(i+",");
+}
+}
+}
+        
+    </script>
+    
+</body>
+</html>

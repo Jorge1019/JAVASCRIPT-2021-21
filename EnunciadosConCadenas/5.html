@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+    <script>
+        var m="busco palabras con menos de cinco letras";
+var frase=m.split(" ");
+var cuenta=0;
+
+
+for (var i=0;i<frase.length;i++){
+  
+if(frase[i].length<5){
+    cuenta++;
+  
+}
+}
+document.write("El numero de palabras con menos de cinco letras es "+cuenta+"</br>");
+
+    if (m.includes("co")){
+        document.write("Existe en la frase la combinacion de letras 'co'</br>")
+    }
+    else{
+        document.write("No existe en la frase ninguna combinacion de letras 'co'</br>")
+    }
+
+  var a=m;
+  for (var i=0;i<m.length-1;i++){
+  
+  if(a.includes("a")){
+      a=a.replace("a","co");
+  }
+    
+  }
+  
+  document.write(a);
+
+  a=m;
+  for (var i=0;i<m.length-1;i++){
+  
+  if(a.includes("co")){
+      a=a.replace("co","Pepe");
+  }
+    
+  }
+  
+  document.write("</br>"+a+"</br>");
+  a="";
+  for (var i=0;i<m.length;i++){
+  
+  a+=m.charAt(i)+",";
+    
+  }
+  
+  document.write(a+"</br>");
+  var cas=0;
+  a="";
+  for (var i=0;i<m.length;i++){
+  
+  if (m.charAt(i)==" "){
+a+="</br>";
+  }
+  else{
+      a+=m.charAt(i);
+  }
+    
+  }
+  
+  document.write(a+"</br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

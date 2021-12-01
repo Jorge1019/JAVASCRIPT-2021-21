@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ejemplo TypeOff</title>
+
+</head>
+
+<body>
+    <script>
+      
+     
+        function espar2(){
+       var a = parseInt(document.getElementById("txtNumero").value);
+       var texto = "";
+       if ((a % 2)==0){
+           texto= "El numero " + a + " es multiplo de dos";
+       }
+       else{
+        texto= "El numero " + a + "  NO es multiplo de dos";
+       }
+       document.getElementById("miDiv").innerHTML=texto;
+        }
+    </script>
+
+    Introduzca el valor de un numero <input type="text" id="txtNumero" /><br><br>
+    <br>
+    
+    <input type="button" value="Es Par?" onclick="espar2();" />
+<div id="miDiv"> </div>
+</body>
+
+</html>

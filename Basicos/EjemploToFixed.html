@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo ToFixed</title>
+</head>
+<body>
+  <script>
+
+function numeros(){
+var resultado="";
+var num=5.5346432
+var num1=5.5346432;
+num=num.toPrecision(4);//4 digitos aproximados
+num1=num1.toFixed(4);//4 numeros aproximados decimales
+var num2=5.364235.toExponential(1);
+document.getElementById("miDiv").innerHTML=num+" "+num1+" "+num2;
+}
+
+  </script>  
+<h1 onclick="numeros()">Ejemplo Number</h1>
+<div id="miDiv"></div>
+</body>
+</html>

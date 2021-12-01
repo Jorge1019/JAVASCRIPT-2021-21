@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagenes</title>
+</head>
+<body>
+    Añademe una imagen <input type="text" id="texto">
+    <div id="fotos" style="margin-left: 30%;"><img src="" id="img" alt="fotico" height="200px" width="263px"></div>
+<input type="button" onclick="primera()" value="Primera" style="margin-left: 30%;">
+<input type="button" onclick="anterior()" value="Anterior">
+<input type="button" onclick="siguiente()" value="Siguiente">
+<input type="button" onclick="ultima()" value="Ultima">
+<input type="button" onclick="anadir()" value="Añadir">
+
+<script>
+    
+var array=["uno.jpg","dos.jpg","tres.jpg","cuatro.jpg"];
+document.getElementById("img").src=array[0];
+var existen=["uno","dos","tres","cuatro","cinco","seis","albacete","calamar"];
+var elegir=0;
+
+
+
+function primera(){
+    document.getElementById("img").src=array[0];
+    elegir=0;
+
+}
+function ultima(){
+    document.getElementById("img").src=array[array.length-1];
+    elegir=array.length-1;
+}
+function anterior(){
+    if(elegir!=0){
+    elegir=elegir-1;
+    document.getElementById("img").src=array[elegir];
+    }
+    else{
+        document.getElementById("img").src=array[array.length-1];
+        elegir=array.length-1;
+    }
+
+}
+function siguiente(){
+    if(elegir!=array.length-1){
+    elegir=elegir+1;
+    document.getElementById("img").src=array[elegir];
+    }
+    else{
+        document.getElementById("img").src=array[0];
+        elegir=0;
+    }
+
+}
+function anadir(){
+    var docum=document.getElementById("texto").value;
+
+if (existen.indexOf(docum) == -1){
+alert(docum+" NO EXISTE WARRO");
+
+}
+else{
+array.push(docum+".jpg");
+document.getElementById("img").src=array[array.length-1];
+document.getElementById("texto").value="";
+}
+}
+
+
+</script>
+
+
+
+</body>
+</html>

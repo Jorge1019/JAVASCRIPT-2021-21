@@ -1,0 +1,42 @@
+<!--EN EL CASO QUE EL COCHE SEA FORD-> TALLERES VELASCO
+                                CITROEN->  TALLERES DOCTOR ESQUERDO
+                                PEUGEOT->  TALLERES LAS ALCACIAS        -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>SWITCH</title>
+</head>
+
+<body>
+    <script>
+        function taller() {
+            var marca = document.getElementById("coche").value;
+            var texto = "";
+            switch (marca.toLowerCase()) {
+
+                case "ford": texto = "Usted tendra que ir a Talleres Velasco"; break;
+
+                case "citroen": texto = "Usted tendra que ir a Tallereso Doctor Esquerda"; break;
+
+                case "peugeot": texto = "Usted tendra que ir a Talleres Las Alcacias"; break;
+                default: texto = "Su marca no coincide con ninguna establecida, pruebe con peugeot, ford o citroen"; break;
+            }
+            document.getElementById("miDiv").innerHTML = texto;
+
+        }
+
+    </script>
+    Introduzca el nombre de su marca<input type="text" id="coche" /><br><br>
+
+
+    <input type="button" value="Localizar" id="boton" onclick="taller();" />
+    <div id="miDiv"> </div>
+
+
+</body>
+
+</html>

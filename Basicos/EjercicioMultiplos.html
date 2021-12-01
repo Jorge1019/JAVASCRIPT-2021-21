@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Multiplos</title>
+</head>
+<body>
+    <script>
+        function multiplos() {
+            var a = parseInt(document.getElementById("numero").value);
+            var texto = "";
+
+            var z = a;
+            for (var m = 2; m <= a; m++) {
+
+                if (a % m == 0) {
+                    texto += m + "x ";
+                    a = a / m;
+                    m = 1;
+                }
+
+
+
+            }
+
+            document.getElementById("miDiv").innerHTML = texto + " Son los multiplos de " + z;
+        }
+
+    </script>
+    Introduzca un numero<input type="text" id="numero" /><br><br>
+    <input type="button" value="EVALUAR" id="boton" onclick="multiplos();" />
+    <div id="miDiv"></div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ejemplo TypeOff</title>
+
+</head>
+
+<body>
+    <script>
+      
+        function suma() {
+            var a = parseInt(document.getElementById("1").value);
+            var b = parseInt(document.getElementById("2").value);
+            document.getElementById("res").value = a + b;
+
+        }
+        function espar2(){
+       var a = parseInt(document.getElementById("txtNumero").value);
+       var texto = "";
+       if ((a % 2)==0){
+           texto= "El numero " + a + " es multiplo de dos";
+       }
+       else{
+        texto= "El numero " + a + "  NO es multiplo de dos";
+       }
+       document.getElementById="miDiv".innerHTML=texto;
+        }
+    </script>
+    Introduzca el valor de a <input type="text" id="1" /><br><br>
+
+    Introduzca el valor de b <input type="text" id="2" /><br>
+
+    El resultado de la suma es
+    <input type="text" id="res" />
+    <input type="button" value="SUMAR" onclick="suma();" />
+<br><br><br>
+    Introduzca el valor de un numero <input type="text" id="txtNumero" /><br><br>
+    <br>
+    <input type="text" id="miDiv" />
+    <input type="button" value="ES PAR?" onclick="espar2();" />
+
+</body>
+
+</html>

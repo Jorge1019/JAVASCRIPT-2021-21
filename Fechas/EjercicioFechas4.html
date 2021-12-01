@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fechas</title>
+</head>
+<body>
+<script>
+
+function introducirFecha(){
+
+    var fechaHoy=new Date();
+    var ano=parseInt(document.getElementById("ano").value)
+    var mes=parseInt(document.getElementById("mes").value)
+    var dia=parseInt(document.getElementById("dia").value)
+    var fecha2=new Date(ano,mes,dia);
+var edad =0;
+
+    
+    if (fecha2.getMonth()-1<fechaHoy.getMonth()){
+    edad=(fechaHoy.getUTCFullYear()-fecha2.getUTCFullYear());
+}
+else if ((fechaHoy.getMonth()==fecha2.getMonth()-1)&&(fechaHoy.getDate()>=fecha2.getDate())){
+    edad=(fechaHoy.getUTCFullYear()-fecha2.getUTCFullYear());
+}
+else{
+    edad=(fechaHoy.getUTCFullYear()-1-fecha2.getUTCFullYear());  
+}
+document.getElementById("miDiv").innerHTML="Con esa fecha tendrias "+edad+" anos"
+}
+
+</script>
+Ano<input type="text" id="ano" /><br>
+Mes<input type="text" id="mes" /><br>
+Dia<input type="text" id="dia" /><br>
+<input type="button" value="Calcular" id="boton" onclick="introducirFecha();" />
+
+<div id="miDiv"></div>
+
+
+
+
+</body>
+</html>

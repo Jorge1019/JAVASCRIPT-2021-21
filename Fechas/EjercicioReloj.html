@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj</title>
+</head>
+
+<body>
+
+    <script>
+
+        var tiempo = new Date();
+        //var variable1=setTimeout("reloj()",2000);//mil significa cuanto tiempo quiero que dure
+        //var variable2=setInterval("reloj()",2000); //para limpiar estas variables se usaran clearinterval(variable2) y cleartimeout(variable1)
+
+        function reloj() {
+            var tiempo = new Date();
+            var minutos = tiempo.getMinutes() + ":";
+            var segundos = tiempo.getSeconds();
+            var horas = tiempo.getHours() + ":";
+            if (horas < 10) {
+                horas = "0" + horas;
+            }
+            if (minutos < 10) {
+                minutos = "0" + minutos;
+            }
+            if (segundos < 10) {
+                segundos = "0" + segundos;
+            }
+
+            document.getElementById("miDiv").innerHTML = horas + minutos + segundos;
+            document.getElementById("intervalo").disabled = true;
+        }
+        function pararInterval() {
+
+            clearInterval(parar);
+            document.getElementById("intervalo").disabled = false;
+        }
+    </script>
+
+    <input type="button" value="TimeOut" onclick="setTimeout('reloj()',2000)" />
+    <input type="button" id="intervalo" value="Interval" onclick="parar=setInterval('reloj()',1000)" />
+    <input type="button" value="PararInterval" onclick="pararInterval()" />
+    <div id="miDiv"></div>
+</body>
+
+
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>CATEGORIAS</title>
+</head>
+
+<body>
+    <script>
+
+        function categoria() {
+            var a = parseInt(document.getElementById("1").value);
+            var texto = "Su categoria es ";
+            switch (a) {
+                case 18:
+                case 17:
+                case 16: texto += "JUVENIL"; break;
+                case 15:
+                case 14: texto += "CADETE"; break;
+                case 13:
+                case 12: texto += "INFANTIL"; break;
+                case 11:
+                case 10: texto += "ALEVIN"; break;
+                case 9:
+                case 8: texto += "BENJAMIN"; break;
+                case 7: 
+                case 6: 
+                case 5: texto += "PRE BENJAMIN"; break;
+                default: texto = "Fuera de categoria"; break;
+            }
+
+            document.getElementById("miDiv").innerHTML = texto;
+        }
+    </script>
+
+    Introduzca la edad<input type="text" id="1" /><br><br>
+
+
+    <input type="button" value="Aceptar" id="boton" onclick="categoria();" />
+    <div id="miDiv"> </div>
+
+
+
+</body>
+
+</html>
