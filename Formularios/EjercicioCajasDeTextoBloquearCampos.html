@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Cajas</title>
+
+
+</head>
+<body>
+    <form id="miFormulario" name="miFormulario">
+Usuario: <input type="text" id="usuario" onkeyup="cambiar()"><br>
+Clave: <input type="text" id="clave" onkeyup="cambiar()"><br>
+
+
+
+
+        <input type="button" name="boton" id="boton" value="Validar" onclick="validar()"> 
+    </form>
+<script>
+    var cuenta=0;
+var usuario="manolo";
+var clave="manolo"
+var usuDado=document.getElementById("usuario").value;
+ var claveDado=document.getElementById("clave").value;
+ document.getElementById("boton").disabled=true;
+if (usuDado==""){
+document.getElementById("clave").disabled=true;
+}
+
+/*miFormulario.method="post";
+miFormulario.action="https://www.google.es"
+*/
+function validar (){
+ 
+    var usuDado=document.getElementById("usuario").value;
+ var claveDado=document.getElementById("clave").value;
+ if(usuDado==usuario && claveDado==clave){
+metodo("get");
+action("correcto.html");
+boton.type="submit";
+ }
+else{
+    boton.type="button";
+    cuenta++;
+    alert("Error numero "+cuenta+" de 3 posibles")
+document.getElementById("usuario").value="";
+document.getElementById("clave").value="";
+}
+if (cuenta==3){
+    metodo("post");
+action("mal.html"); 
+boton.type="submit";
+}
+}
+function metodo(x){
+
+ miFormulario.method=x;
+
+
+}
+function action(x){
+
+
+    miFormulario.action=x;
+
+}
+
+function cambiar(){
+    var usuDado=document.getElementById("usuario").value;
+ var claveDado=document.getElementById("clave").value;
+    if (usuDado==""){
+document.getElementById("clave").disabled=true;
+}else{
+document.getElementById("clave").disabled=false;
+}
+if (claveDado=="" || usuDado==""){
+    document.getElementById("boton").disabled=true;
+}
+else{
+    document.getElementById("boton").disabled=false;
+}
+
+
+}
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
