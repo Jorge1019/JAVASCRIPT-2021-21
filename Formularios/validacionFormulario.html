@@ -19,10 +19,11 @@
 <input type="button" id="boton" onclick="validar()" value="Añadir">
     </form>
     
-<textarea cols="50" rows="15"></textarea>
+<textarea cols="50" rows="15" id="ta"></textarea>
 
 
 <script>
+    var num=0;
 document.getElementById("matricula").style.color="red";
 document.getElementById("telefono").style.color="red";
 document.getElementById("nombre").style.color="red";
@@ -37,6 +38,7 @@ var pMatricula=/^\d{4}[-][B-DF-HJ-NP-TV-Zb-df-hj-np-tv-z]{3}$/;
 if (pMatricula.test(matricula)){
 
 document.getElementById("matricula").style.color="blue";
+
 }
 else {        document.getElementById("matricula").style.color="red";
 }
@@ -97,7 +99,25 @@ else {        document.getElementById("url").style.color="red";
 
 }
 
+function validar(){
 
+
+if (document.getElementById("matricula").style.color=="blue" && document.getElementById("telefono").style.color=="blue" && document.getElementById("nombre").style.color=="blue"&& document.getElementById("cp").style.color=="blue"&& document.getElementById("url").style.color=="blue"){
+
+
+document.getElementById("ta").value="Matrícula: "+document.getElementById("matricula").value+"\t"+"Teléfono: "+document.getElementById("telefono").value+"\n Código Postal: "+document.getElementById("cp").value+"\t Nombre: "+document.getElementById("nombre").value+"\n URL: "+document.getElementById("url").value;
+
+
+
+
+}
+else {
+    document.getElementById("ta").value="";
+
+}
+
+
+}
 
 
 
