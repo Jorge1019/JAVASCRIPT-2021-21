@@ -47,11 +47,18 @@ else{
     alert("Error numero "+cuenta+" de 3 posibles")
 document.getElementById("usuario").value="";
 document.getElementById("clave").value="";
+document.getElementById("clave").disabled=true;
+document.getElementById("boton").disabled=true
+
+
+
+
+
 }
-if (cuenta==3){
+if (cuenta==3){boton.type="submit";
     metodo("post");
 action("mal.html"); 
-boton.type="submit";
+
 }
 }
 function metodo(x){

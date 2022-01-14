@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar Formulario</title>
+</head>
+<body>
+   
+    <form>
+<b>Matrícula: </b><input type="text" id="matricula" placeholder="dddd-lll" onkeyup="comprobar()"><br>
+<b>Teléfono: </b><input type="text" id="telefono" placeholder="dd-ddd-dd-dd" onkeyup="comprobar()"><br>
+<b>Código Postal: </b><input type="text" id="cp" placeholder="ddddd" onkeyup="comprobar()"><br>
+<b>Nombre: </b><input type="text" id="nombre" placeholder="llllll llll" onkeyup="comprobar()"><br>
+<b>URL: </b><input type="text" id="url" placeholder="http://llllll.llll.lll"onkeyup="comprobar()"><br>
+
+
+<input type="button" id="boton" onclick="validar()" value="Añadir">
+    </form>
+    
+<textarea cols="50" rows="15"></textarea>
+
+
+<script>
+document.getElementById("matricula").style.color="red";
+document.getElementById("telefono").style.color="red";
+document.getElementById("nombre").style.color="red";
+document.getElementById("cp").style.color="red";
+document.getElementById("url").style.color="red";
+
+
+function comprobar(){
+var matricula=document.getElementById("matricula").value;
+var pMatricula=/^\d{4}[-][B-DF-HJ-NP-TV-Zb-df-hj-np-tv-z]{3}$/;
+
+if (pMatricula.test(matricula)){
+
+document.getElementById("matricula").style.color="blue";
+}
+else {        document.getElementById("matricula").style.color="red";
+}
+
+var telefono=document.getElementById("telefono").value;
+var pTelefono=/^[6-9]\d[-]\d{3}[-]\d{2}[-]\d{2}$/;
+
+   
+
+
+if (pTelefono.test(telefono)){
+
+document.getElementById("telefono").style.color="blue";
+}
+else {        document.getElementById("telefono").style.color="red";
+}
+var codigoP=document.getElementById("cp").value;
+var pCodigoP=/^\d{5}$/;
+
+if (pCodigoP.test(codigoP)){
+
+document.getElementById("cp").style.color="blue";
+}
+else {        document.getElementById("cp").style.color="red";
+}
+
+
+
+
+var nombre=document.getElementById("nombre").value;
+var pNombre=/^[A-Za-záéíóúçÇñÑÁÉÍÚÓ]{2}[A-Za-záéíóúçÇñÑÁÉÍÚÓ -]{0,18}$/;
+
+if (pNombre.test(nombre)){
+
+document.getElementById("nombre").style.color="blue";
+}
+else {        document.getElementById("nombre").style.color="red";
+}
+
+
+var url=document.getElementById("url").value;
+var pUrl=/^((http)s?[:][/][/])?[a-z]{1,}([.][a-z]{2,})+$/;
+
+
+
+if (pUrl.test(url)){
+
+document.getElementById("url").style.color="blue";
+}
+else {        document.getElementById("url").style.color="red";
+}
+
+
+
+
+
+
+
+}
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
