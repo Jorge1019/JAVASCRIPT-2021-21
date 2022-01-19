@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLORES</title>
+</head>
+<body>
+    <form name="form" id="form">
+
+<input type="radio" name="colores1" value="red" onclick="cambio(this.value)">Rojo<br>
+<input type="radio" name="colores1" value="blue" checked onclick="cambio(this.value)">Azul<br>
+<input type="radio" name="colores1" value="green" onclick="cambio(this.value)">Verde<br>
+<input type="radio" name="colores1" value="black"onclick="cambio(this.value)">Negro<br>
+<hr>
+
+<input type="radio" name="colores2" value="red" onclick="cambio2(this.value)"checked>Rojo<br>
+<input type="radio" name="colores2" value="blue"onclick="cambio2(this.value)">Azul<br>
+<input type="radio" name="colores2" value="green"onclick="cambio2(this.value)">Verde<br>
+<input type="radio" name="colores2" value="black"onclick="cambio2(this.value)">Negro<br>
+
+    </form>
+    <hr>
+<div id="miDiv1" style="background-color: blue; height: 200px;width: 200px;"></div>
+<hr>
+<div id="miDiv2" style="background-color: red; height: 200px;width: 200px;"></div>
+<script>
+var div1=document.getElementById("miDiv1");
+var div2=document.getElementById("miDiv2");
+
+
+
+
+
+function cambio(x){
+
+   div1.style.backgroundColor=x;
+
+   
+
+}
+function cambio2(x){
+ 
+
+   div2.style.backgroundColor=x;
+
+}
+
+
+
+</script>
+
+</body>
+</html>
