@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01</title>
+</head>
+<body>
+    <form id="ejemplo1" name="ejemplo1">
+
+<h3>¿Desea suscribirse a nuestro boletín semanal?</h3>
+
+<input type="radio" name="boletin" value="si" checked onclick="habilita(true)" >Si, quiero suscribirme
+<input type="radio" name="boletin" value="no" checked onclick="habilita(false)" >No, no quiero suscribirme
+<br>
+<br>
+<h3>Seleccione los temas de su interés: </h3> <br>
+<input type="checkbox" name="intereses[]" value="Arte y cultura">
+Arte & Cultura<br>   
+<input type="checkbox" name="intereses[]" value="Deportes">
+Deportes<br>   
+<input type="checkbox" name="intereses[]" value="Ciencia">
+Ciencia<br>   
+<input type="checkbox" name="intereses[]" value="Musica">
+Música<br>   
+
+    </form>
+    <script>
+
+var array=document.ejemplo1["intereses[]"];
+
+habilita(false);
+
+
+
+
+
+
+function habilita(param){
+
+if (param==true){
+
+    for (var i=0;i<array.length;i++){
+    array[i].disabled=false;
+}
+
+}
+if (param==false){
+
+    for (var i=0;i<array.length;i++){
+    array[i].disabled=true;
+}
+
+}
+
+}
+
+
+
+
+
+
+    </script>
+</body>
+</html>
