@@ -1,0 +1,12 @@
+var booleano = true;
+var numero = 34;
+var hex = 0xd00d;
+var binary = 10;
+var octal = 485;
+var nombre = "Jorge";
+var Apellidos = 'Lominchar';
+var direccion = "Avenida Somorrotro";
+var age = 19;
+var sentence = "Hello, my name is ".concat(nombre, ". I\u00B4ll be ").concat(age + 1, " next month");
+var frase = "Hello, my name is " + nombre + " and i´ll be " + age + " next month";
+document.body.innerHTML = "Booleano = " + booleano + "<br> + Frase = sentence";
