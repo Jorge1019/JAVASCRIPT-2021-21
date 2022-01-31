@@ -18,10 +18,16 @@ cadena+="<br>c 0 "+c+"<br> Animals[3]= "+Animals[3];
 //EL INDICE
 cadena += "<br> Animals.shark "+ Animals.shark;
 
+//VARAIBLE QUE SE LE PUEDEN ASIGNAR DOS TIPOS DE DATOS
+let mivar:string | number = "Cadena";
+mivar=34;
+//Esto da error --> mivar=true;
 
+//TIPOS DE DATOS PERSONALIZADOS
 
-
-
+type letrasYnumeros = string | number;
+let numeros:letrasYnumeros=23;
+let letras:letrasYnumeros="Jorge"; 
 
 
 document.body.innerHTML=cadena;
