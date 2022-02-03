@@ -1,0 +1,24 @@
+import { COMPILER_OPTIONS, Component } from "@angular/core";
+
+@Component ({
+
+selector: "videojuego",
+//SE DEBEN PONER COMILLAS INVERTIDAS PARA PONER CODIGO HTML
+templateUrl: "./videojuego.component.html"
+
+
+
+
+
+})
+//PARA CREAR EL NOMBRE DE LA CLASE SE UTILIZA LA SINATXIS CAMEL CASE    
+export class videojuegoComponent{
+public titulo:string;
+public listado:string;
+
+  constructor() {
+    this.titulo = "Componente de videojuegos"
+    this.listado = "Listado de los videojuegos más populares de la actualidad"
+  }
+
+}
