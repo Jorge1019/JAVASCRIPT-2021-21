@@ -2,6 +2,17 @@
 <div>
     <span>{{ title }} La aplicacion está funcionando </span>
 <h1>{{texto}}</h1>
-<videojuego></videojuego>
+
+
+<videojuego *ngIf="mostrar_videojuegos"></videojuego><br>
+<button (click)="ocultarVideojuegos(false)" *ngIf="mostrar_videojuegos">Ocultar Videojuegos</button>
+<button (click)="ocultarVideojuegos(true)" *ngIf="!mostrar_videojuegos">Mostrar Videojuegos Videojuegos</button>
+
+
+
+<dado></dado><dado></dado><dado></dado><br>
+<zapatillas *ngIf="mostrar_zapatillas"></zapatillas>
+<button (click)="ocultarZapatillas(false)" *ngIf="mostrar_zapatillas">Ocultar Zapatillas</button>
+<button (click)="ocultarZapatillas(true)" *ngIf="!mostrar_zapatillas">Mostrar Zapatillas </button>
   </div>
 
