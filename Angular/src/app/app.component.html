@@ -1,6 +1,14 @@
 
-<div>
-    <span>{{ title }} La aplicacion está funcionando </span>
+<div [ngStyle]="{
+'background' : config.fondo,
+'padding' : '20px',
+'border' : '5px solid black',
+'border-color' : config.color
+
+
+}">
+    <span>{{ title }} </span><br>
+    <span>{{descripcion}}</span>
 <h1>{{texto}}</h1>
 
 

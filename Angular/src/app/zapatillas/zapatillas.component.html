@@ -1,14 +1,17 @@
 <h2>{{titulo}}</h2>
 <ul>
-    <li>
-        Nike
+    <li *ngFor="let deportiva of zapatillas">
+       <strong>Nombre : </strong>  {{deportiva.nombre}} 
+       <strong>Marca : </strong>  {{deportiva.marca}}
+       <strong>Color : </strong>  {{deportiva.color}}
+       <strong>Precio : </strong>  {{deportiva.precio}}
+       <strong>Stock : </strong>  {{deportiva.stock}}
+
+
+
+
     </li>
 
-    <li>
-        Adidas
-    </li>
-    <li>
-        Puma
-    </li>
+ 
 
 </ul>
