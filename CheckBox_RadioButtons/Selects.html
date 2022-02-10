@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Selects</title>
+</head>
+<body>
+    <form name="form">
+        Introduzca texto: <input type="text" name="text" id="text" onkeyup="habilita()">
+        <input type="button" id="añadir" name="añadir" onclick="añadirOp()" value="Añadir" disabled><br>
+        <select name="Sizquierda" id="Sizquierda" multiple>
+            <option value="Opcion1">Opcion1</option>
+            <option value="Opcion2">Opcion2</option>
+            <option value="Opcion3">Opcion3</option>
+        </select>
+
+
+        <input type="button" id="moverD" name="moverD" value=">>" onclick="mover(form.Sizquierda,form.Sderecha)"> 
+        <input type="button" id="moverI" name="moverI" value="<<" onclick="mover(form.Sderecha, form.Sizquierda)">
+        <input type="button" id="moverTD" name="moverTD" value=">>|" onclick="moverT(form.Sizquierda,form.Sderecha)">
+        <input type="button" id="moverTI" name="moverTI" value="|<<" onclick="moverT(form.Sderecha, form.Sizquierda)">
+        <input type="button" id="borrarTD" name="borrarTD" value="X1" onclick="borrar(form.Sderecha)">
+        <input type="button" id="borrarTI" name="borrarTI" value="X2" onclick="borrar(form.Sizquierda)">
+
+        <select name="Sderecha" id="Sderecha" multiple>
+
+        </select><br>
+
+        <input type="button" id="cd" name="cd" onclick="c(form.Sizquierda,form.Sderecha)" value="Copiar a la Derecha">
+        <input type="button" id="ci" name="ci" onclick="c(form.Sderecha, form.Sizquierda)" value="Copiar a la Izquierda"><br>
+        <input type="button" id="bi" name="bi" onclick="bi()" value="Borrar a la Izquierda">
+        <input type="button" id="bd" name="bd" onclick="bd()" value="Borrar a la Derecha">
+    </form>
+
+    <script>
+
+function mover(origen, destino){
+    var elementos = origen.options.length;
+    for( var i=elementos-1; i>=0; i--){
+        if(origen.options[i].selected){
+            destino.options[destino.options.length] = new Option(origen.options[i].text, origen.options[i].value);
+            origen.options[i] = null;
+        }
+    }
+}
+
+function moverT(origen, destino){
+    var elementos = origen.options.length;
+    for( var i=elementos-1; i>=0; i--){
+        destino.options[destino.options.length] = new Option(origen.options[i].text, origen.options[i].value);
+        origen.options[i] = null;
+        
+    }
+}
+
+function c(origen, destino){
+    var elementos = origen.options.length;
+    for(i=0; i<elementos; i++){
+        if(origen.options[i].selected){
+        destino.options[destino.options.length] = new Option(origen.options[i].text, origen.options[i].value);
+        }
+    }
+}
+function borrar(origen){
+    var elementos = origen.options.length;
+    for( var i=elementos-1; i>=0; i--){
+        origen.options[i] = null;
+    }
+}
+
+function habilita(){
+    if(document.getElementById("text").value.trim() != ""){
+        document.getElementById("añadir").disabled = false;
+    }else{
+        document.getElementById("añadir").disabled = true;
+    }
+}
+
+
+
+function añadirOp(){
+    form.Sizquierda.options[form.Sizquierda.options.length] = new Option (form.text.value,form.text.value );
+}
+    </script>
+
+
+</body>
+</html>
