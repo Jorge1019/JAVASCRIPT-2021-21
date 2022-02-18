@@ -1,5 +1,5 @@
 import { COMPILER_OPTIONS, Component, DoCheck, OnDestroy, OnInit } from "@angular/core";
-
+import { videoJuego } from '../models/videojuegos';
 @Component ({
 
 selector: "videojuego",
@@ -16,9 +16,16 @@ export class videojuegoComponent implements OnInit,DoCheck, OnDestroy{
 public titulo:string;
 public listado:string;
 
+public arrayVideojuego:Array<videoJuego>;
+mi_nombre:string="";
+mi_compania:string="";
+mi_precio:number=0;
+mi_online:boolean=true;
+mi_stock:boolean=true;
   constructor() {
     this.titulo = "Componente de videojuegos"
     this.listado = "Listado de los videojuegos más populares de la actualidad"
+    this.arrayVideojuego=[];
   }
   ngDoCheck(): void {
       
@@ -32,5 +39,9 @@ public listado:string;
   cambiarTitulo(){
     this.titulo="Nuevo Componente de videojuego";
   }
+anadirVideojuego(){
+  this.arrayVideojuego.push(new videoJuego(this.mi_nombre,this.mi_compania,this.mi_precio,this.mi_online,this.mi_stock));
+}
+
 
 }

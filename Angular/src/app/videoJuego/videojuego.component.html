@@ -1,8 +1,22 @@
 <h2>{{titulo}} </h2><!--USO DE LAS PROPIEDADES POR INTERPOLACION (BINDING POR INTERPOLACION)-->
+
+
+<span><h1>Crear una videojuego: </h1></span><br>
+Nombre<input type="text" [(ngModel)]="mi_nombre"> <br>
+Compañia<input type="text" [(ngModel)]="mi_compania" > <br>
+
+Precio<input type="text" [(ngModel)]="mi_precio"> <br>
+Online<input type="text" [(ngModel)]="mi_online"> <br>
+Stock<input type="text" [(ngModel)]="mi_stock"> <br>
+
+<input type="button" value="Añadir" (click)="anadirVideojuego()">
 <p>-{{listado}}</p>
 <ul>
     <li>GTA</li>
     <li>Prince of Persia</li>
     <li>Mario Bros</li>
+    <li *ngFor="let videojuego of arrayVideojuego">
+        {{videojuego.nombre}}
+    </li>
 </ul>
 <button (click)="cambiarTitulo()">Cambiar Titulo</button>

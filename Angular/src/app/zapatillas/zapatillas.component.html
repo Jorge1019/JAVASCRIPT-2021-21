@@ -1,17 +1,36 @@
 <h2>{{titulo}}</h2>
 <ul>
-    <li *ngFor="let deportiva of zapatillas">
-       <strong>Nombre : </strong>  {{deportiva.nombre}} 
-       <strong>Marca : </strong>  {{deportiva.marca}}
-       <strong>Color : </strong>  {{deportiva.color}}
-       <strong>Precio : </strong>  {{deportiva.precio}}
-       <strong>Stock : </strong>  {{deportiva.stock}}
-
-
-
-
+    <li *ngFor="let misMarca of marcas">
+       {{misMarca}}
     </li>
 
  
 
 </ul>
+<p>Las zapatillas disponibles son: </p>
+<ul>
+    <li *ngFor="let deportiva of zapatillas">
+<span [ngStyle]= "{
+'text-decoration':!deportiva.stock? 'line-through' : 'none' 
+}
+    ">
+{{deportiva.nombre}}
+
+</span><br>
+</li>
+</ul>
+
+
+<span><h1>Crear una zapatilla: </h1></span><br>
+Nombre<input type="text" [(ngModel)]="mi_nombre"> <br>
+Marca<input type="text" [(ngModel)]="mi_marca" > <br>
+Color<input type="text" [(ngModel)]="mi_color"> <br>
+Precio<input type="text" [(ngModel)]="mi_precio"> <br>
+
+<input type="button" value="Añadir" (click)="anadirZapas()">
+
+<strong>EN OFERTA</strong>
+
+
+
+   

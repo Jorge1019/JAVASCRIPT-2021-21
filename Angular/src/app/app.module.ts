@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { videojuegoComponent } from './videoJuego/videojuego.component';
 import { DadoComponent } from './dado/dado.component';
 import { ZapatillasComponent } from './zapatillas/zapatillas.component';
+import { NombreComponent } from './nombre/nombre.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     videojuegoComponent,
     DadoComponent,
-    ZapatillasComponent
+    ZapatillasComponent,
+    NombreComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
