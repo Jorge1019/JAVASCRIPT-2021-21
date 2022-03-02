@@ -1,0 +1,39 @@
+<h1>Esta es la lista de consolas</h1>
+
+<ul>
+
+    <li *ngFor="let consola of listaConsolas">
+
+
+
+<h3>{{consola.nombre}}</h3><p>{{consola.marca}}</p><p>{{consola.precio}}€</p>
+
+
+
+    </li>
+
+   
+
+
+
+
+
+
+
+
+   
+
+
+
+
+</ul>
+Nombre<input type="text" [(ngModel)]="mi_nombre">
+
+Marca<input type="text" [(ngModel)]="mi_marca">
+
+Precio<input type="text" [(ngModel)]="mi_precio">
+
+Stock<input type="text" [(ngModel)]="mi_stock">
+
+
+<input type="button" (click)="anadirConsola()" value="Añadir">
