@@ -1,4 +1,4 @@
-import { LOCALE_ID,NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { PipesComponent } from './pipes/pipes.component';
 import localesEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
-registerLocaleData(localesEs,"es");
+registerLocaleData(localesEs, 'es');
 
 @NgModule({
   declarations: [
@@ -20,14 +20,10 @@ registerLocaleData(localesEs,"es");
     DadoComponent,
     ZapatillasComponent,
     NombreComponent,
-    PipesComponent
+    PipesComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
-  providers: [{provide:LOCALE_ID,useValue:'es'}],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  providers: [{ provide: LOCALE_ID, useValue: 'es' }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

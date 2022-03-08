@@ -1,16 +1,18 @@
-import { ThisReceiver } from "@angular/compiler"
-export class Zapatilla{
+import { ThisReceiver } from '@angular/compiler';
+export class Zapatilla {
+  public nombre: string;
+  public marca: string;
+  public color: string;
+  public precio: number;
+  public stock: boolean;
 
-    public nombre:string;
-    public marca : string;
-    public color:string;
-    public precio : number;
-    public stock : boolean;
-
-
-
-
-  constructor(nombre: string, marca: string, color: string,  precio: number, stock: boolean) {
+  constructor(
+    nombre: string,
+    marca: string,
+    color: string,
+    precio: number,
+    stock: boolean
+  ) {
     this.nombre = nombre;
     this.marca = marca;
     this.color = color;

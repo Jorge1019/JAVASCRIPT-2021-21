@@ -1,26 +1,30 @@
+<div
+  [ngStyle]="{
+    background: config.fondo,
+    padding: '20px',
+    border: '5px solid black',
+    'border-color': config.color
+  }"
+>
+  <span>{{ title }} </span><br />
+  <span>{{ descripcion }}</span>
+  <h1>{{ texto }}</h1>
 
-<div [ngStyle]="{
-'background' : config.fondo,
-'padding' : '20px',
-'border' : '5px solid black',
-'border-color' : config.color
+  <videojuego *ngIf="mostrar_videojuegos"></videojuego><br />
+  <button (click)="ocultarVideojuegos(false)" *ngIf="mostrar_videojuegos">
+    Ocultar Videojuegos
+  </button>
+  <button (click)="ocultarVideojuegos(true)" *ngIf="!mostrar_videojuegos">
+    Mostrar Videojuegos Videojuegos
+  </button>
 
+  <dado></dado><dado></dado><dado></dado><br />
 
-}">
-    <span>{{ title }} </span><br>
-    <span>{{descripcion}}</span>
-<h1>{{texto}}</h1>
-
-
-<videojuego *ngIf="mostrar_videojuegos"></videojuego><br>
-<button (click)="ocultarVideojuegos(false)" *ngIf="mostrar_videojuegos">Ocultar Videojuegos</button>
-<button (click)="ocultarVideojuegos(true)" *ngIf="!mostrar_videojuegos">Mostrar Videojuegos Videojuegos</button>
-
-
-
-<dado></dado><dado></dado><dado></dado><br>
-<zapatillas *ngIf="mostrar_zapatillas"></zapatillas>
-<button (click)="ocultarZapatillas(false)" *ngIf="mostrar_zapatillas">Ocultar Zapatillas</button>
-<button (click)="ocultarZapatillas(true)" *ngIf="!mostrar_zapatillas">Mostrar Zapatillas </button>
-  </div>
-
+  <zapatillas *ngIf="mostrar_zapatillas"></zapatillas>
+  <button (click)="ocultarZapatillas(false)" *ngIf="mostrar_zapatillas">
+    Ocultar Zapatillas
+  </button>
+  <button (click)="ocultarZapatillas(true)" *ngIf="!mostrar_zapatillas">
+    Mostrar Zapatillas
+  </button>
+</div>
